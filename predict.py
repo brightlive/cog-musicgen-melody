@@ -63,7 +63,7 @@ class Predictor(BasePredictor):
         duration: int = Input(description="Duration of the generated audio in seconds.", default=8, le=30),
         continuation: bool = Input(description="If `True`, generated music will continue `melody`. Otherwise, generated music will mimic `melody`'s melody.", default=False),
         continuation_start: int = Input(description="Start time of the audio file to use for continuation.", default=0, ge=0),
-        continuation_end: int = Input(description="End time of the audio file to use for continuation. If -1 or None, will default to the end of the audio clip.", default=None, ge=0),
+        continuation_end: int = Input(description="End time of the audio file to use for continuation. If -1 or None, will default to the end of the audio clip.", default=0, ge=0),
         normalization_strategy: str = Input(description="Strategy for normalizing audio.", default="loudness", choices=["loudness", "clip", "peak", "rms"]),
         top_k: int = Input(description="Reduces sampling to the k most likely tokens.", default=250),
         top_p: float = Input(description="Reduces sampling to tokens with cumulative probability of p. When set to  `0` (default), top_k sampling is used.", default=0.0),
